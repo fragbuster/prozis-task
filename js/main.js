@@ -1,3 +1,6 @@
+import { Canvas } from './classes/Canvas';
+import { Ball } from './classes/Ball';
+
 const canvasObj = new Canvas();
 const ballObj = new Ball();
 
@@ -7,7 +10,7 @@ canvasObj.initialize();
 const canvas = document.getElementById(canvasObj.canvasId);
 const context = canvas.getContext("2d");
 
-let balls = [];
+const balls = [];
 
 // Settup for the balls container
 const container = {
@@ -28,7 +31,7 @@ const action = () => {
     
     // Loop to deal with the fisics of each ball in the pool
     balls.map(ball => {
-        ballObj.draw(ball);
+        ballObj.draw(context, ball);
 
         ball.x += ball.vx * ball.t;
         ball.y += ball.vy * (ball.t - 0.5) * ball.a * (ball.t * ball.t);

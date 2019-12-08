@@ -1,0 +1,25 @@
+{
+  "name": "prozis-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./js/main.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack --watch",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fragbuster/prozis-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fragbuster/prozis-task/issues"
+  },
+  "homepage": "https://github.com/fragbuster/prozis-task#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

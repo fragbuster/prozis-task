@@ -1,4 +1,4 @@
-class Ball {
+export class Ball {
     constructor() {
         this.minRadius = 25;
         this.maxRadius = 50;
@@ -27,7 +27,7 @@ class Ball {
     }
 
     // Draws the ball in the canvas
-    draw(ball) {
+    draw(context, ball) {
         context.beginPath();
         context.fillStyle = 'rgb('+ ball.red +', '+ ball.green +', '+ ball.blue +')';
         context.arc(ball.x, ball.y, ball.r, 0, Math.PI * 2, true);

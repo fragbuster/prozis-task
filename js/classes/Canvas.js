@@ -1,4 +1,4 @@
-class Canvas {
+export class Canvas {
     constructor() {
         this.windowWidth = Math.floor(window.innerWidth - 30);
         this.windowHeight = window.innerHeight;
