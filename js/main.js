@@ -13,21 +13,11 @@ const context = canvas.getContext("2d");
 const balls = [];
 
 // Settup for the balls container
-const container = {
-    x: 0,
-    y: 0,
-    width: canvasObj.windowWidth,
-    height: canvasObj.windowHeight,
-    initialize: () => {
-        context.fillStyle = "#fff";
-        context.fillRect(0, 0, container.width, container.height);
-    }
-};
 
 // Action to deal with all the phisics and animations
 const action = () => {
     // Initializes the ball container
-    container.initialize();
+    canvasObj.initializeContext(context);
     
     // Loop to deal with the fisics of each ball in the pool
     balls.map(ball => {
@@ -38,12 +28,12 @@ const action = () => {
 
         ball.vy += ball.a;
 
-        if (ball.x - ball.r + ball.vx < container.x || ball.x + ball.r + ball.vx > container.x + container.width) {
+        if (ball.x - ball.r + ball.vx < 0 || ball.x + ball.r + ball.vx > 0 + canvasObj.windowWidth) {
             ball.vx = -ball.vx / 1.1;
             ball.vx = ball.vx / 1.1;
         }
 
-        if (ball.y + ball.r + ball.vy > container.y + container.height || ball.y - ball.r + ball.vy < container.y) {
+        if (ball.y + ball.r + ball.vy > 0 + canvasObj.windowHeight || ball.y - ball.r + ball.vy < 0) {
             ball.vy = -ball.vy / 1.1;
             ball.vy = ball.vy / 1.1;
         }
