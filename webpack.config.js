@@ -8,5 +8,5 @@ module.exports = {
     filename: 'main.js'
   },
 
-  mode: 'development'
+  mode: 'production'
 };
