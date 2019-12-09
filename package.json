@@ -5,8 +5,7 @@
   "main": "./js/main.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "start": "webpack --watch",
-    "test": "test"
+    "start": "webpack --watch"
   },
   "repository": {
     "type": "git",
