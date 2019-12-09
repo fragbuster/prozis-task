@@ -35,6 +35,32 @@ export class Ball {
         context.closePath();
     }
 
+    action(balls, context, canvasObj) {
+        // Initializes the ball container
+        canvasObj.initializeContext(context);
+        
+        // Loop to deal with the fisics of each ball in the pool
+        balls.map(ball => {
+            ballObj.draw(context, ball);
+
+            ball.x += ball.vx * ball.t;
+            ball.y += ball.vy * (ball.t - 0.5) * ball.a * (ball.t * ball.t);
+
+            ball.vy += ball.a;
+
+            if (ball.x - ball.r + ball.vx < 0 || ball.x + ball.r + ball.vx > 0 + canvasObj.windowWidth) {
+                ball.vx = -ball.vx / 1.1;
+                ball.vx = ball.vx / 1.1;
+            }
+
+            if (ball.y + ball.r + ball.vy > 0 + canvasObj.windowHeight || ball.y - ball.r + ball.vy < 0) {
+                ball.vy = -ball.vy / 1.1;
+                ball.vy = ball.vy / 1.1;
+            }
+        });
+    } 
+
+    // Abstract function to generate a random in a range
     rangeRandomizer(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     }

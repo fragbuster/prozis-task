@@ -13,6 +13,7 @@ export class Canvas {
         document.getElementById(this.containerId).innerHTML = this.canvasTemplate;
     }
 
+    // Initializes the context in canvas
     initializeContext(context) {
         context.fillStyle = "#fff";
         context.fillRect(0, 0, this.windowWidth, this.windowHeight);

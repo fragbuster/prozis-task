@@ -12,7 +12,11 @@ const context = canvas.getContext("2d");
 
 const balls = [];
 
-// Settup for the balls container
+// On click adds a new ball to the pool
+canvas.addEventListener('click', (e) => {
+    balls.push(ballObj.create(e));
+});
+
 
 // Action to deal with all the phisics and animations
 const action = () => {
@@ -39,11 +43,6 @@ const action = () => {
         }
     });
 }
-
-// On click adds a new ball to the pool
-canvas.addEventListener('click', (e) => {
-    balls.push(ballObj.create(e));
-});
 
 // Loop the action
 setInterval(action, 1000/canvasObj.FPS);
